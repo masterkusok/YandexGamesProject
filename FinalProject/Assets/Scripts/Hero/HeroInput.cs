@@ -13,8 +13,13 @@ public class HeroInput : MonoBehaviour
 
     public void Turn(InputAction.CallbackContext context) 
     {
-        Vector2 direction = context.ReadValue<Vector2>();
-        _heroMovement.Turn(direction);
+        // ѕроверка фазы нужна дл€ того, чтобы действие вызывалось только один раз
+
+        if (context.phase == InputActionPhase.Performed)
+        {
+            Vector2 direction = context.ReadValue<Vector2>();
+            _heroMovement.Turn(direction);
+        }
     }
 
 }
