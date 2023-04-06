@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnrgyTank : Movable
+public class EnergyTank : Movable
 {
-    private float _ÒountEnergy = 1;
+    private float _—ÅountEnergy = 1;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
-            hero.AddEnergy(_ÒountEnergy);
+            hero.AddEnergy(_—ÅountEnergy);
             Destroy(gameObject);
         }
 

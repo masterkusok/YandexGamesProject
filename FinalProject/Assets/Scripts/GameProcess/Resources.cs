@@ -3,17 +3,17 @@ using UnityEngine;
 public class Resources : MonoBehaviour
 {
     public uint Coins { get; private set; } = 0;
-    public uint Enegry { get; private set; } = 5;
+    public uint Energy { get; private set; } = 5;
 
     public void AddCoin() => Coins++;
 
-    public void AddEnegry() => Enegry++;
+    public void AddEnergy() => Energy++;
 
     public bool UseEnergy(uint amount)
     {
-        if(Enegry >= amount)
+        if(Energy >= amount)
         {
-            Enegry -= amount;
+            Energy -= amount;
             return true;
         }
 

@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     {
         if (_isOnCooldown)
             return;
-        if (_resources.Enegry < _requiredEnergy)
+        if (_resources.Energy < _requiredEnergy)
             return;
 
         GoOnCooldown();

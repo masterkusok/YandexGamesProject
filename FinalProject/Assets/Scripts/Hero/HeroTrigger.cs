@@ -6,8 +6,8 @@ public class HeroTrigger : MonoBehaviour
     [SerializeField] private GameState _gameState;
     public void AddEnergy(float count)
     {
-        _resources.AddEnegry();
-        Debug.Log(_resources.Enegry);
+        _resources.AddEnergy();
+        Debug.Log(_resources.Energy);
     }
 
     public void damage()
@@ -23,7 +23,7 @@ public class HeroTrigger : MonoBehaviour
 
     public void LevelSucceeded()
     {
-        _gameState.LevelSucceded();
+        _gameState.LevelSucceeded();
     }
 
 }
