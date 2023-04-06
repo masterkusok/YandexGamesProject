@@ -3,7 +3,7 @@ using UnityEngine;
 public class Resources : MonoBehaviour
 {
     public uint Coins { get; private set; } = 0;
-    public uint Enegry { get; private set; } = 0;
+    public uint Enegry { get; private set; } = 5;
 
     public void AddCoin() => Coins++;
 
