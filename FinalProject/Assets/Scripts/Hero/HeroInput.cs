@@ -2,16 +2,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(HeroMovement))]
-[RequireComponent(typeof(HeroShooting))]
 public class HeroInput : MonoBehaviour
 {
+    [SerializeField] private Gun _defaultGun;
     private HeroMovement _heroMovement;
-    private HeroShooting _heroShooting;
 
     private void Start()
     {
         _heroMovement = GetComponent<HeroMovement>();
-        _heroShooting = GetComponent<HeroShooting>();
     }
 
     public void Turn(InputAction.CallbackContext context) 
@@ -29,7 +27,7 @@ public class HeroInput : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Performed)
         {
-            _heroShooting.Shoot();
+            _defaultGun.TryShoot();
         }
     }
 
