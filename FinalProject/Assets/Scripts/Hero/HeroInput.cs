@@ -15,7 +15,7 @@ public class HeroInput : MonoBehaviour
 
     public void Turn(InputAction.CallbackContext context) 
     {
-        // Проверка фазы нужна для того, чтобы действие вызывалось только один раз
+        // РџСЂРѕРІРµСЂРєР° С„Р°Р·С‹ РЅСѓР¶РЅР° РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ РґРµР№СЃС‚РІРёРµ РІС‹Р·С‹РІР°Р»РѕСЃСЊ С‚РѕР»СЊРєРѕ РѕРґРёРЅ СЂР°Р·
 
         if (context.phase == InputActionPhase.Performed && _gameState.IsPlaying)
         {

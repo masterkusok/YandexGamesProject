@@ -8,7 +8,7 @@ public class Meteor : Movable
     {
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
-            hero.damage();
+            hero.Damage();
         }
     }
 }

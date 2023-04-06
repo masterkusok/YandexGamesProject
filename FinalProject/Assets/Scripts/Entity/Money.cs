@@ -10,7 +10,7 @@ public class Money : Movable
     {
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
-            hero.addMoney(_countMoney);
+            hero.AddMoney(_countMoney);
             Destroy(gameObject);
         }
 
