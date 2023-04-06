@@ -1,21 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroTrigger : MonoBehaviour
 {
+    [SerializeField] private Resources _resources;
+    [SerializeField] private GameState _gameState;
     public void AddEnergy(float count)
     {
-        Debug.Log("energy");
+        _resources.AddEnegry();
+        Debug.Log(_resources.Enegry);
     }
 
     public void damage()
     {
-        Debug.Log("damage");
+        _gameState.GameOver();
     }
 
     public void addMoney(float count)
     {
-        Debug.Log("money");
+        _resources.AddCoin();
+        Debug.Log(_resources.Coins);
     }
+
+    public void LevelSucceeded()
+    {
+        _gameState.LevelSucceded();
+    }
+
 }

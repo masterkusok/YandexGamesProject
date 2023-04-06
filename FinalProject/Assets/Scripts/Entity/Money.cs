@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Money : MonoBehaviour
+public class Money : Movable
 {
     [SerializeField] private int _countMoney = 1;
 
@@ -11,6 +11,7 @@ public class Money : MonoBehaviour
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
             hero.addMoney(_countMoney);
+            Destroy(gameObject);
         }
 
     }
