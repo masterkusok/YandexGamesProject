@@ -2,5 +2,5 @@ public class Config
 {
     public const int RowWidth = 4;
 
-    public const float EnvironmentSpeed = 50f;
+    public const float EnvironmentSpeed = 30f;
 }

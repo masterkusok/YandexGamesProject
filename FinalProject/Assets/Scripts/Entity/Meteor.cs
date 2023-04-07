@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Meteor : Movable
@@ -9,6 +7,11 @@ public class Meteor : Movable
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
             hero.damage();
+        }
+        if(other.TryGetComponent<Bullet>(out Bullet bullet))
+        {
+            Destroy(bullet.gameObject);
+            Destroy(gameObject);
         }
     }
 }

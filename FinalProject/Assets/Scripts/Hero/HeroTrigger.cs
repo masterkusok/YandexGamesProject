@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class HeroTrigger : MonoBehaviour
 {
     [SerializeField] private Resources _resources;
@@ -7,7 +8,6 @@ public class HeroTrigger : MonoBehaviour
     public void AddEnergy(float count)
     {
         _resources.AddEnergy();
-        Debug.Log(_resources.Energy);
     }
 
     public void damage()

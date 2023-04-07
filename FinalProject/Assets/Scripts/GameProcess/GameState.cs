@@ -7,24 +7,20 @@ public class GameState : MonoBehaviour
     public void Pause()
     {
         IsPlaying = false;
-        // ... Логика для открытия всякого всякого
     }
 
     public void GameOver()
     {
         IsPlaying = false;
-        // ... Логика для открытия всякого всякого
     }
 
     public void LevelSucceeded()
     {
         IsPlaying = false;
-        // ... Логика для открытия всякого всякого
     }
 
     public void Resume()
     {
         IsPlaying = true;
-        // ... Логика для закрытия всякого всякого
     }
 }
