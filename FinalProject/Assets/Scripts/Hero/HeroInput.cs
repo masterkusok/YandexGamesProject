@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(HeroMovement))]
@@ -26,7 +27,7 @@ public class HeroInput : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed && _gameState.IsPlaying)
+        if(context.phase == InputActionPhase.Performed && _gameState.IsPlaying && !EventSystem.current.IsPointerOverGameObject())
         {
             _defaultGun.TryShoot();
         }
