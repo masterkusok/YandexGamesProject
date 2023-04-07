@@ -10,5 +10,11 @@ public class Meteor : Movable
         {
             hero.Damage();
         }
+
+        if (other.TryGetComponent<Bullet>(out Bullet bullet))
+        {
+            Destroy(bullet.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

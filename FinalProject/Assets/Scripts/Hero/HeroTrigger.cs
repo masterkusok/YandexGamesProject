@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class HeroTrigger : MonoBehaviour
 {
     [SerializeField] private Resources _resources;
