@@ -1,9 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class Resources : MonoBehaviour
 {
-    public uint Coins { get; private set; } = 0;
+    [SerializeField] private TMP_Text _energyCounterText;
+    [SerializeField] private TMP_Text _coinCounterText;
+
+    public uint Coins { get; private set; }
     public uint Energy { get; private set; } = 5;
+
+    private void Update()
+    {
+        _energyCounterText.text = Energy.ToString();
+        _coinCounterText.text = Coins.ToString();
+    }
 
     public void AddCoin() => Coins++;
 
@@ -11,7 +21,7 @@ public class Resources : MonoBehaviour
 
     public bool UseEnergy(uint amount)
     {
-        if(Energy >= amount)
+        if (Energy >= amount)
         {
             Energy -= amount;
             return true;
