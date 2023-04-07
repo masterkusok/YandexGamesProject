@@ -10,12 +10,12 @@ public class HeroTrigger : MonoBehaviour
         _resources.AddEnergy();
     }
 
-    public void damage()
+    public void Damage()
     {
         _gameState.GameOver();
     }
 
-    public void addMoney(float count)
+    public void AddMoney(float count)
     {
         _resources.AddCoin();
         Debug.Log(_resources.Coins);

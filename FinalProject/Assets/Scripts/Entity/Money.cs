@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Money : Movable
@@ -10,7 +8,7 @@ public class Money : Movable
     {
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
-            hero.addMoney(_countMoney);
+            hero.AddMoney(_countMoney);
             Destroy(gameObject);
         }
 

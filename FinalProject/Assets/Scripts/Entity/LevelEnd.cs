@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class LevelEnd : Movable
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.TryGetComponent<HeroTrigger>(out HeroTrigger other))
+        if(other.gameObject.TryGetComponent<HeroTrigger>(out HeroTrigger hero))
         {
-            other.LevelSucceeded();
+            hero.LevelSucceeded();
         }
     }
 }

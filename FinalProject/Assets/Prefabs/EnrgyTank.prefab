@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4722706197895438709}
   - component: {fileID: 2310210158262374358}
   - component: {fileID: 991020714867528850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b3b97d193a7a38745bef7d14dd90e49d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1543293891508865684}
   - component: {fileID: 9131553266017804566}
   - component: {fileID: 4476157154513897190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnrgyTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
