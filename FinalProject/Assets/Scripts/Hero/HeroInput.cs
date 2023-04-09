@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(HeroInput))]
 public class HeroInput : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;   
     [SerializeField] private Gun _defaultGun;
     [SerializeField] private GameState _gameState;
     private HeroMovement _heroMovement;
@@ -35,6 +36,13 @@ public class HeroInput : MonoBehaviour
     {
         if (_gameState.IsPlaying)
         {
+            _animator.ResetTrigger("turn_right");
+            _animator.ResetTrigger("turn_left");
+            if (direction.x < 0)
+                _animator.SetTrigger("turn_left");
+            else
+                _animator.SetTrigger("turn_right");
+
             _heroMovement.Turn(direction);
         }
     }

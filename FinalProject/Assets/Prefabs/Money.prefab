@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7888071785352588895}
   - component: {fileID: 7112399677127768724}
   - component: {fileID: -6010467602628548582}
+  - component: {fileID: 4207287370036793566}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -77,6 +78,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countMoney: 1
+--- !u!95 &4207287370036793566
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895061531533771063}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c996e5904e2fa341936a2f279394657, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &791766097828579812
 PrefabInstance:
   m_ObjectHideFlags: 0

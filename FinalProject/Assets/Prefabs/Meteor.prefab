@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5693820b20a022c4390d2fb146701b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _asteroidExplodePrefab: {fileID: 817481889890586402, guid: fc90f886c20dee54b8083042329615d6,
+    type: 3}
 --- !u!54 &3161052745838041261
 Rigidbody:
   m_ObjectHideFlags: 0
