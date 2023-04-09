@@ -18,13 +18,11 @@ public class PausePanel : MonoBehaviour
     {
         gameObject.SetActive(false);
         _gameState.Resume();
-
     }
 
     private void ExitHandler()
     {
         gameObject.SetActive(false);
         _gameState.GameOver();
-        SceneManager.LoadScene(0);
     }
 }

@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Image _cooldownImage;
 
     private bool _isOnCooldown = false;
+    private float _timeLeft;
 
     public void TryShoot()
     {
@@ -26,8 +27,9 @@ public class Gun : MonoBehaviour
 
     private void GoOnCooldown()
     {
-        _isOnCooldown = true;
         _cooldownImage.fillAmount = 0;
+        _timeLeft = 0f;
+        _isOnCooldown = true;
         StartCoroutine(nameof(WaitForCooldown));
         StartCoroutine(nameof(FillCooldownImageRoutine));
     }
@@ -40,20 +42,12 @@ public class Gun : MonoBehaviour
 
     private IEnumerator FillCooldownImageRoutine()
     {
-        while (_isOnCooldown)
+        while (_isOnCooldown && _timeLeft < _cooldown)
         {
-            if (_cooldownImage.fillAmount < 1)
-            {
-                float circleFillPercents = 360f;
-                _cooldownImage.fillAmount += (circleFillPercents / _cooldown) / circleFillPercents;
-            }
-
-            if (_cooldownImage.fillAmount > 1)
-            {
-                _cooldownImage.fillAmount = 1;
-            }
-
-            yield return new WaitForSeconds(1);
+            _timeLeft += Time.deltaTime;
+            var normalizedValue = Mathf.Clamp(_timeLeft / _cooldown, 0.0f, 1.0f);
+            _cooldownImage.fillAmount = normalizedValue;
+            yield return null;
         }
     }
 }
