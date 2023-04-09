@@ -2972,7 +2972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea00ce988890764e867d42b876275bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldown: 5
+  _cooldown: 3
   _requiredEnergy: 1
   _resources: {fileID: 1347495897}
   _bulletPrefab: {fileID: 6401390809068601009, guid: 9334ffa92c48564409219c7fc6db80b5,
