@@ -18,7 +18,6 @@ public class HeroTrigger : MonoBehaviour
     public void AddMoney(float count)
     {
         _resources.AddCoin();
-        Debug.Log(_resources.Coins);
     }
 
     public void LevelSucceeded()

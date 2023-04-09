@@ -2,27 +2,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PausePanel : MonoBehaviour
+public class GameOverPanel : MonoBehaviour
 {
-    [SerializeField] private Button _resumeButton;
+    [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
-    [SerializeField] private GameState _gameState;
 
     private void Start()
     {
-        _resumeButton.onClick.AddListener(ResumeHandler);
+        _restartButton.onClick.AddListener(RestartHandler);
         _exitButton.onClick.AddListener(ExitHandler);
     }
 
-    private void ResumeHandler()
+    private void RestartHandler()
     {
         gameObject.SetActive(false);
-        _gameState.Resume();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void ExitHandler()
     {
         gameObject.SetActive(false);
-        _gameState.GameOver();
+        SceneManager.LoadScene(0);
     }
 }
