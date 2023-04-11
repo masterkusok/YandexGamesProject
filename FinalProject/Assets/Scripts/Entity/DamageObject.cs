@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Meteor : Movable
+public class DamageObject : Movable
 {
     [SerializeField] private GameObject _asteroidExplodePrefab;
     private void OnTriggerEnter(Collider other)
@@ -10,11 +10,17 @@ public class Meteor : Movable
             hero.Damage();
         }
 
-        if(other.TryGetComponent<Bullet>(out Bullet bullet))
+        else if(other.TryGetComponent<PlayerBullet>(out PlayerBullet bulletP))
         {
-            Destroy(bullet.gameObject);
+            bulletP.Delete();
             Instantiate(_asteroidExplodePrefab, transform.position, Quaternion.identity, null);
             Destroy(gameObject);
+        }
+
+        else if (other.TryGetComponent<EnemyBullet>(out EnemyBullet bulletE))
+        {
+            bulletE.Delete();
+       
         }
     }
 }

@@ -33,4 +33,16 @@ public class HeroTrigger : MonoBehaviour
         Instantiate(_heroExplodePrefab, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
     }
+
+    public void MoveTo(Vector3 posTarget)
+    {
+        if (posTarget.x < 0)
+        {
+            gameObject.GetComponent<HeroMovement>().Turn(Vector2.left);
+        }
+        if (posTarget.x > 0)
+        {
+            gameObject.GetComponent<HeroMovement>().Turn(Vector2.right);
+        }
+    }
 }

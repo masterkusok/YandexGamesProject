@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 
-class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    [SerializeField] float _speed;
+    [SerializeField] protected float _speed;
     private void Update()
     {
-        if (transform.position.z > 200)
+        if (Mathf.Abs(transform.position.z) > 200)
             Destroy(gameObject);
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+    }
+
+    public void Delete()
+    {
+        Destroy(gameObject);
     }
 }
