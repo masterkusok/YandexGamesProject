@@ -14,6 +14,8 @@ public class HeroMovement : MonoBehaviour
     [SerializeField] private float _moveTime = 1f;
     private AudioManager _audioManager;
 
+    private bool _magneted = false;
+
     private Position _position = Position.Mid;
 
     private Vector3 _targetPosition;
@@ -26,6 +28,9 @@ public class HeroMovement : MonoBehaviour
 
     public void Turn(Vector2 direction)
     {
+        if (_magneted)
+            return;
+
         if (direction == Vector2.left && (_position == Position.Mid || _position == Position.Right))
         {
             _position--;
@@ -37,6 +42,14 @@ public class HeroMovement : MonoBehaviour
             _position++;
             StartMoving();
         }
+    }
+
+    public void MagnetTo(Vector3 targetPosition)
+    {
+        _magneted = true;
+        _targetPosition = targetPosition;
+        StopCoroutine(nameof(Move));
+        StartCoroutine(nameof(Move));
     }
 
     private void StartMoving()

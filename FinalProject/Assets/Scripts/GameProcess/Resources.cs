@@ -7,7 +7,7 @@ public class Resources : MonoBehaviour
     [SerializeField] private TMP_Text _coinCounterText;
 
     public uint Coins { get; private set; }
-    public uint Energy { get; private set; }
+    public uint Energy { get; private set; } = 10;
 
     private void Update()
     {

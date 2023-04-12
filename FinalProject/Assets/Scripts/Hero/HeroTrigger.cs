@@ -50,11 +50,11 @@ public class HeroTrigger : MonoBehaviour
     {
         if (posTarget.x < 0)
         {
-            gameObject.GetComponent<HeroMovement>().Turn(Vector2.left);
+            gameObject.GetComponent<HeroMovement>().MagnetTo(Vector2.left*Config.RowWidth);
         }
         if (posTarget.x > 0)
         {
-            gameObject.GetComponent<HeroMovement>().Turn(Vector2.right);
+            gameObject.GetComponent<HeroMovement>().MagnetTo(Vector2.left * Config.RowWidth);
         }
     }
 }

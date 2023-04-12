@@ -50,7 +50,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 6401390809068601009, guid: 9334ffa92c48564409219c7fc6db80b5,
     type: 3}
   _cooldownImage: {fileID: 0}
-  _audioManager: {fileID: 0}
+  _audioManager: {fileID: 2327280699460644308}
 --- !u!1 &2327280698774525154
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 2327280698774525158}
   - component: {fileID: 2327280698774525156}
   - component: {fileID: 2327280698774525159}
+  - component: {fileID: 2327280699460644308}
   m_Layer: 0
   m_Name: Main Hero
   m_TagString: Untagged
@@ -133,7 +134,7 @@ MonoBehaviour:
   _gameState: {fileID: 0}
   _heroExplodePrefab: {fileID: 1030300251524240329, guid: 7b89fb7adc8ea9f42b895eedf045447c,
     type: 3}
-  _animator: {fileID: 0}
+  _animator: {fileID: 7153468926827825776}
 --- !u!65 &2327280698774525156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -163,6 +164,60 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2327280699460644308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2327280698774525154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba6910f1d36c7a4dad635cf892ccbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - Clip: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+    Name: Laser1
+    Volume: 1
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: d1f2477ca0d094c828b805f8745c21be, type: 3}
+    Name: Explode
+    Volume: 0.7
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: b4d84b4427b714f81906f5e9df31e3a4, type: 3}
+    Name: Coin
+    Volume: 0.47
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: 6a55b1210d28e48f9be508821dfab1d3, type: 3}
+    Name: Energy
+    Volume: 0.71
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: 16458abe8d5a64f7a8082f0de46d643f, type: 3}
+    Name: Error
+    Volume: 0.56
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: bca37a64604704def8659e7c2769936d, type: 3}
+    Name: ObjectDestroy
+    Volume: 0.71
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
+    Name: victory
+    Volume: 0.71
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+    Name: Hop1
+    Volume: 0.42
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+    Name: Hop2
+    Volume: 0.48
+    Pitch: 1
+  - Clip: {fileID: 8300000, guid: a0010a1a0c474473b81729eb770c485f, type: 3}
+    Name: Loose
+    Volume: 0.48
+    Pitch: 1
+  _soundCooldown: 0.1
 --- !u!1001 &8186366428799794733
 PrefabInstance:
   m_ObjectHideFlags: 0

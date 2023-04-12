@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class ActiveObject : MonoBehaviour
 {
-    private bool active = false;
+    private bool _active = false;
 
-    public void Activate()
-    {
-        active = true;
-    }
+    public void Activate() => _active = true;
 
-    public bool isActive()
-    {
-        return active;
-    }
+    public bool isActive() => _active;
         
 }

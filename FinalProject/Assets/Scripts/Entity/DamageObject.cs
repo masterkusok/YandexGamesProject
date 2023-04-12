@@ -13,14 +13,14 @@ public class DamageObject : Movable
         else if(other.TryGetComponent<PlayerBullet>(out PlayerBullet bulletP))
         {
             bulletP.Delete();
-            Instantiate(_asteroidExplodePrefab, transform.position, Quaternion.identity, null);
+            Instantiate(_asteroidExplodePrefab, transform.position, Quaternion.identity, 
+                gameObject.GetComponentInParent<Track>().transform);
             Destroy(gameObject);
         }
 
         else if (other.TryGetComponent<EnemyBullet>(out EnemyBullet bulletE))
         {
             bulletE.Delete();
-       
         }
     }
 }
