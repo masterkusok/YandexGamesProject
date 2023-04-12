@@ -13,7 +13,7 @@ public class Meteor : Movable
         if(other.TryGetComponent<Bullet>(out Bullet bullet))
         {
             Destroy(bullet.gameObject);
-            Instantiate(_asteroidExplodePrefab, transform.position, Quaternion.identity, null);
+            Instantiate(_asteroidExplodePrefab, transform.position, Quaternion.identity, GetComponentInParent<Track>().gameObject.transform);
             Destroy(gameObject);
         }
     }

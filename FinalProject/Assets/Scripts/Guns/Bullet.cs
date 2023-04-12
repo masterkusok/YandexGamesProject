@@ -3,6 +3,7 @@
 class Bullet : MonoBehaviour
 {
     [SerializeField] float _speed;
+
     private void Update()
     {
         if (transform.position.z > 200)

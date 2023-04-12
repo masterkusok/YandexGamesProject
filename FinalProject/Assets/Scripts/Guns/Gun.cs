@@ -9,20 +9,21 @@ public class Gun : MonoBehaviour
     [SerializeField] Resources _resources;
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] private Image _cooldownImage;
+    [SerializeField] private AudioManager _audioManager;
 
     private bool _isOnCooldown = false;
     private float _timeLeft;
 
     public void TryShoot()
     {
-        if (_isOnCooldown)
+        if (_isOnCooldown || _resources.Energy < _requiredEnergy){
+            _audioManager.PlaySound("Error");
             return;
-        if (_resources.Energy < _requiredEnergy)
-            return;
-
+        }
+        _audioManager.PlaySound("Laser1");
         GoOnCooldown();
         _resources.UseEnergy(_requiredEnergy);
-        Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
+        CreateBullet();
     }
 
     private void GoOnCooldown()
@@ -49,5 +50,10 @@ public class Gun : MonoBehaviour
             _cooldownImage.fillAmount = normalizedValue;
             yield return null;
         }
+    }
+
+    private void CreateBullet()
+    {
+        GameObject bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
     }
 }

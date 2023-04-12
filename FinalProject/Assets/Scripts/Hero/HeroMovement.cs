@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioManager))]
 public class HeroMovement : MonoBehaviour
 {
     enum Position
@@ -11,6 +12,7 @@ public class HeroMovement : MonoBehaviour
     }
 
     [SerializeField] private float _moveTime = 1f;
+    private AudioManager _audioManager;
 
     private Position _position = Position.Mid;
 
@@ -18,6 +20,7 @@ public class HeroMovement : MonoBehaviour
 
     private void Start()
     {
+        _audioManager = gameObject.GetComponent<AudioManager>();
         _targetPosition = transform.position;
     }
 
@@ -38,6 +41,7 @@ public class HeroMovement : MonoBehaviour
 
     private void StartMoving()
     {
+        _audioManager.PlaySound($"Hop{Random.Range(1, 3)}");
         _targetPosition = new Vector3((int)_position, 0, 0) * Config.RowWidth;
         StopCoroutine(nameof(Move));
         StartCoroutine(nameof(Move));
