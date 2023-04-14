@@ -22,9 +22,7 @@ public class HeroTrigger : MonoBehaviour
 
     public void Damage()
     {
-        _audioManager.PlaySound("Explode");
         _gameState.GameOver();
-        Explode();
     }
 
     public void AddMoney(float count)
@@ -40,8 +38,9 @@ public class HeroTrigger : MonoBehaviour
         _gameState.LevelSucceeded();
     }
 
-    private void Explode()
+    public void Explode()
     {
+        _audioManager.PlaySound("Explode");
         Instantiate(_heroExplodePrefab, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
     }
@@ -50,7 +49,7 @@ public class HeroTrigger : MonoBehaviour
     {
         if (posTarget.x < 0)
         {
-            gameObject.GetComponent<HeroMovement>().MagnetTo(Vector2.left*Config.RowWidth);
+            gameObject.GetComponent<HeroMovement>().MagnetTo(Vector2.left * Config.RowWidth);
         }
         if (posTarget.x > 0)
         {
