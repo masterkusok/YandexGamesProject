@@ -6628,6 +6628,7 @@ MonoBehaviour:
   _pausePanel: {fileID: 1439500392}
   _gameOverPanel: {fileID: 2132441658}
   _levelSucceededPanel: {fileID: 139227595}
+  _resources: {fileID: 1347495897}
 --- !u!4 &1574770673
 Transform:
   m_ObjectHideFlags: 0
