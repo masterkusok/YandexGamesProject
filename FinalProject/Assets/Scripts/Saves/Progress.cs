@@ -12,8 +12,6 @@ public class GameInfo
 
 public class Progress : MonoBehaviour
 {
-
-    
     private static Progress _instance;
 
     public static Progress GetInstance()
@@ -24,7 +22,7 @@ public class Progress : MonoBehaviour
 
     private void Awake()
     {
-        
+
         if (_instance == null)
         {
             transform.parent = null;
