@@ -8,7 +8,7 @@ public class HeroTrigger : MonoBehaviour
     [SerializeField] private GameObject _heroExplodePrefab;
     [SerializeField] private Animator _animator;
     private AudioManager _audioManager;
-
+    public bool isDebugMode = false;
     private void Start()
     {
         _audioManager = GetComponent<AudioManager>();
@@ -22,9 +22,13 @@ public class HeroTrigger : MonoBehaviour
 
     public void Damage()
     {
-        _audioManager.PlaySound("Explode");
-        _gameState.GameOver();
-        Explode();
+        if (!isDebugMode)
+        {
+            _audioManager.PlaySound("Explode");
+            _gameState.GameOver();
+            Explode();
+        }
+        
     }
 
     public void AddMoney(float count)
@@ -54,7 +58,28 @@ public class HeroTrigger : MonoBehaviour
         }
         if (posTarget.x > 0)
         {
-            gameObject.GetComponent<HeroMovement>().MagnetTo(Vector2.left * Config.RowWidth);
+            gameObject.GetComponent<HeroMovement>().MagnetTo(Vector2.right * Config.RowWidth);
+        }
+    }
+
+    public void StopMove()
+    {
+        
+        gameObject.GetComponent<HeroMovement>().StopMagnet();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            if (isDebugMode)
+            {
+                isDebugMode = false;
+            }
+            else
+            {
+                isDebugMode = true;
+            }
         }
     }
 }

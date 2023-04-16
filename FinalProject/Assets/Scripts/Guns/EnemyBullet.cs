@@ -9,4 +9,5 @@ public class EnemyBullet : Bullet
         _speed = -_speed;
     }
 
+
 }
