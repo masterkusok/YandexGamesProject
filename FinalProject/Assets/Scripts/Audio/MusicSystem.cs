@@ -42,7 +42,7 @@ public class MusicSystem : MonoBehaviour
     {
         _audioSource.clip = clip;
         _audioSource.Play();
-        StartCoroutine(nameof(WaitForSongEnd));
+        StartCoroutine(nameof(WaitForSongEnd), clip.length);
     }
 
     private IEnumerator WaitForSongEnd(float seconds)

@@ -9,7 +9,7 @@ public class UiSoundSystem : MonoBehaviour
 
     private void Awake()
     {
-
+        _audioManager = GetComponent<AudioManager>();
         if (_instance == null)
         {
             transform.parent = null;
@@ -23,6 +23,11 @@ public class UiSoundSystem : MonoBehaviour
     }
 
     private void Start()
+    {
+        _audioManager = GetComponent<AudioManager>();
+    }
+
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
             _audioManager.PlaySound("Click");
