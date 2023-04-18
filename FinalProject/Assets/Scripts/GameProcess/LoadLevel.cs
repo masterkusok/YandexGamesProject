@@ -13,7 +13,9 @@ public class LoadLevel : MonoBehaviour
     [SerializeField] private GameObject _money;
     [SerializeField] private GameObject _energyTank;
 
-    [SerializeField] private Transform _parent;
+    [SerializeField] private Transform _parentLeft;
+    [SerializeField] private Transform _parentMid;
+    [SerializeField] private Transform _parentRight;
 
     [SerializeField] private int _scale;
     [SerializeField] private int _shift; 
@@ -44,28 +46,44 @@ public class LoadLevel : MonoBehaviour
                     switch (line[i + 1])
                     { 
                         case '2':
-                            Instantiate(_finish, new Vector3(i * _scale, 0, (numLine * _scale) +_shift), Quaternion.identity, _parent);
+                            InstantiateObject(_finish, new Vector3(0, 0, (numLine * _scale) + _shift));
                             break;
                         case '3':
-                            Instantiate(_meteor, new Vector3(i * _scale, 0, (numLine * _scale) +_shift), Quaternion.identity, _parent);
+                            InstantiateObject(_meteor, new Vector3(i * _scale, 0, (numLine * _scale) + _shift));
                             break;
                         case '4':
-                            Instantiate(_enemy, new Vector3(i * _scale, 0, (numLine * _scale) +_shift), Quaternion.identity, _parent);
+                            InstantiateObject(_enemy, new Vector3(i * _scale, 0, (numLine * _scale) + _shift));
                             break;
                         case '5':
-                            Instantiate(_blackHole, new Vector3(i * _scale, 0, (numLine * _scale) +_shift), Quaternion.identity, _parent);
+                            InstantiateObject(_blackHole, new Vector3(i * _scale, 0, (numLine * _scale) + _shift));
                             break;
                         case '6':
-                            Instantiate(_money, new Vector3(i * _scale, 0, (numLine * _scale) +_shift), Quaternion.identity, _parent);
+                            InstantiateObject(_money, new Vector3(i * _scale, 0, (numLine * _scale) + _shift));
                             break;
                         case '7':
-                            Instantiate(_energyTank, new Vector3(i * _scale, 0, (numLine * _scale) +_shift), Quaternion.identity, _parent);
+                            InstantiateObject(_energyTank, new Vector3(i * _scale, 0, (numLine * _scale) + _shift));
                             break;
                     }
                 }
                 numLine++;
             }
         }
+    }
+
+    private void InstantiateObject(GameObject obj, Vector3 pos) {
+        if (pos.x < 0)
+        {
+            Instantiate(obj, new Vector3(pos.x, 0, pos.z), Quaternion.identity, _parentLeft);
+        }
+        if (pos.x == 0)
+        {
+            Instantiate(obj, new Vector3(pos.x, 0, pos.z), Quaternion.identity, _parentMid);
+        }
+        if (pos.x > 0)
+        {
+            Instantiate(obj, new Vector3(pos.x, 0, pos.z), Quaternion.identity, _parentRight);
+        }
+
     }
 
 }

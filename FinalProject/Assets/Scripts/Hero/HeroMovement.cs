@@ -44,10 +44,19 @@ public class HeroMovement : MonoBehaviour
         }
     }
 
-    public void MagnetTo(Vector3 targetPosition)
+    public void MagnetTo(Vector2 targetPosition)
     {
         _magneted = true;
         _targetPosition = targetPosition;
+        if (targetPosition == Vector2.left)
+        {
+            _position--;
+        }
+
+        if (targetPosition == Vector2.right)
+        {
+            _position++;
+        }
         StopCoroutine(nameof(Move));
         StartCoroutine(nameof(Move));
     }
