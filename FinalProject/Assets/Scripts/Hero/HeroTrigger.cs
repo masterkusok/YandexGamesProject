@@ -36,7 +36,7 @@ public class HeroTrigger : MonoBehaviour
             if (_resources.Hp <= 0)
             {
                 _gameState.GameOver();
-                Explode();
+                _blinker.StopBlink();
                 return;
             }
             StartCoroutine(nameof(BecomeInvincible));
@@ -60,12 +60,13 @@ public class HeroTrigger : MonoBehaviour
 
     public void LevelSucceeded()
     {
+        _blinker.StopBlink();
         _animator.SetTrigger("victory");
         _audioManager.PlaySound("victory");
         _gameState.LevelSucceeded();
     }
 
-    private void Explode()
+    public void Explode()
     {
         Instantiate(_heroExplodePrefab, transform.position, Quaternion.identity, null);
         Destroy(gameObject);
@@ -85,7 +86,6 @@ public class HeroTrigger : MonoBehaviour
 
     public void StopMove()
     {
-        
         gameObject.GetComponent<HeroMovement>().StopMagnet();
     }
 

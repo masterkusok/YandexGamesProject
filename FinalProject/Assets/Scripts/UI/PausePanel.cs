@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
@@ -16,7 +15,7 @@ public class PausePanel : MonoBehaviour
 
     private void ResumeHandler()
     {
-        gameObject.SetActive(false);
+
         _gameState.Resume();
     }
 

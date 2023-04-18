@@ -6943,6 +6943,8 @@ MonoBehaviour:
   _gameOverPanel: {fileID: 2132441658}
   _levelSucceededPanel: {fileID: 139227595}
   _resources: {fileID: 1347495897}
+  _heroTrigger: {fileID: 2327280699460644307}
+  _gameEndTimeout: 1
   _currentLevel: 2
 --- !u!4 &1574770673
 Transform:
@@ -9714,3 +9716,15 @@ PrefabInstance:
       objectReference: {fileID: 1347495897}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d56c9ca4dc1764fb32c6436b4bb4bd, type: 3}
+--- !u!114 &2327280699460644307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2327280698774525158, guid: d9d56c9ca4dc1764fb32c6436b4bb4bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2327280699460644306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955087152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8eb7491e93f33d419a9d3044c4c990e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

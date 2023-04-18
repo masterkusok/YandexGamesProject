@@ -12,6 +12,12 @@ public class InvincibilityBlink : MonoBehaviour
         StartCoroutine(nameof(Blink), duration);
     }
 
+    public void StopBlink()
+    {
+        StopAllCoroutines();
+        _model.SetActive(true);
+    }
+
     private IEnumerator Blink(float duration)
     {
         float i = 0;

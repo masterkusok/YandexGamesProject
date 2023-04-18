@@ -13,13 +13,12 @@ public class Swipe : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Input.touchCount);
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             _touchStart = Input.GetTouch(0).position;
         }
 
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             _touchEnd = Input.GetTouch(0).position;
             _swipeDirection = _touchEnd - _touchStart;
@@ -28,7 +27,7 @@ public class Swipe : MonoBehaviour
             else
                 Swiped();
         }
-        
+
     }
 
     private void Tapped()

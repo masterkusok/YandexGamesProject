@@ -14,13 +14,13 @@ public class DamageObject : Movable
         {
             if(!TryGetComponent<EnemyBullet>(out EnemyBullet bullet))
             {
+                bulletP.BulletPenetration--;
+                if (bulletP.BulletPenetration <= 0)
+                    Destroy(bulletP.gameObject);
                 Instantiate(_asteroidExplodePrefab, transform.position,
                 Quaternion.identity, GetComponentInParent<Track>().gameObject.transform);
             }
 
-            bulletP.BulletPenetration--;
-            if (bulletP.BulletPenetration <= 0)
-                Destroy(bulletP.gameObject);
             Destroy(gameObject);
         }
 
