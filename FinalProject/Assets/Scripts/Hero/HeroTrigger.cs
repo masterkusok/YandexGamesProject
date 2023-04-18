@@ -22,7 +22,12 @@ public class HeroTrigger : MonoBehaviour
 
     public void Damage()
     {
-        _gameState.GameOver();
+        _resources.DecreaseHpLevel();
+
+        if (_resources.HpLevel == 0)
+        {
+            _gameState.GameOver();
+        }
     }
 
     public void AddMoney(float count)

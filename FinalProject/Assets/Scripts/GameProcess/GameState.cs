@@ -21,6 +21,23 @@ public class GameState : MonoBehaviour
     {
         IsPlaying = false;
         _heroTrigger.Explode();
+        var hpLevel = _resources.HpLevel;
+        var bulletPowerLevel = _resources.BulletPowerLevel;
+        _resources.KnockHpLevel();
+
+        if (hpLevel == 0)
+        {
+            hpLevel = 1;
+        }
+
+        Debug.Log(hpLevel);
+
+        Progress.GetInstance().Info.HpLevel = hpLevel;
+        Progress.GetInstance().Info.BulletPowerLevel = bulletPowerLevel == 1 ? bulletPowerLevel : bulletPowerLevel - 1;
+        Progress.GetInstance().Save();
+
+        Debug.Log(Progress.GetInstance().Info.HpLevel);
+
         StartCoroutine(nameof(GameOverTimeoutRoutine));
     }
 

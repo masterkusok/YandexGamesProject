@@ -25,6 +25,19 @@ public class Resources : MonoBehaviour
 
     public void AddEnergy() => Energy++;
 
+    public void DecreaseHpLevel()
+    {
+        if (HpLevel > 0)
+        {
+            HpLevel--;
+        }
+    }
+
+    public void KnockHpLevel()
+    {
+        HpLevel = 0;
+    }
+
     public bool UseEnergy(uint amount)
     {
         if (Energy >= amount)
