@@ -30,13 +30,9 @@ public class GameState : MonoBehaviour
             hpLevel = 1;
         }
 
-        Debug.Log(hpLevel);
-
         Progress.GetInstance().Info.HpLevel = hpLevel;
         Progress.GetInstance().Info.BulletPowerLevel = bulletPowerLevel == 1 ? bulletPowerLevel : bulletPowerLevel - 1;
         Progress.GetInstance().Save();
-
-        Debug.Log(Progress.GetInstance().Info.HpLevel);
 
         StartCoroutine(nameof(GameOverTimeoutRoutine));
     }
