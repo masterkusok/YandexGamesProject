@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 2327280698774525156}
   - component: {fileID: 2327280698774525159}
   - component: {fileID: 2327280699460644308}
+  - component: {fileID: 1307801478}
   m_Layer: 0
   m_Name: Main Hero
   m_TagString: Untagged
@@ -135,6 +136,8 @@ MonoBehaviour:
   _heroExplodePrefab: {fileID: 1030300251524240329, guid: 7b89fb7adc8ea9f42b895eedf045447c,
     type: 3}
   _animator: {fileID: 7153468926827825776}
+  _invincibilityDuration: 3
+  isDebugMode: 0
 --- !u!65 &2327280698774525156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -218,6 +221,20 @@ MonoBehaviour:
     Volume: 0.48
     Pitch: 1
   _soundCooldown: 0.1
+--- !u!114 &1307801478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2327280698774525154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79c9b05cd6fb83438297deba05618df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _model: {fileID: 7497907039460282615}
+  _frequency: 10
 --- !u!1001 &8186366428799794733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,6 +301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spaceship
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843725276079795930, guid: b3c0a61dfe701344d819eb701e83f4b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3c0a61dfe701344d819eb701e83f4b7, type: 3}

@@ -6,6 +6,7 @@ public class GameState : MonoBehaviour
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _levelSucceededPanel;
     [SerializeField] private Resources _resources;
+    [SerializeField] private uint _currentLevel;
     public bool IsPlaying { get; private set; } = true;
 
     public void Pause()
@@ -24,8 +25,11 @@ public class GameState : MonoBehaviour
     {
         IsPlaying = false;
         _levelSucceededPanel.SetActive(true);
-        Progress.GetInstance().Info.Coins += _resources.Coins;
-        Progress.GetInstance().Save();
+        Progress instance = Progress.GetInstance();
+        if (_currentLevel > instance.Info.LevelsPassed)
+            instance.Info.LevelsPassed++;
+        instance.Info.Coins += _resources.Coins;
+        instance.Save();
     }
 
     public void Resume()

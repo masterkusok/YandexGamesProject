@@ -9,16 +9,17 @@ public class BlackHole : Movable
         if (other.TryGetComponent<Bullet>(out Bullet bullet))
             bullet.Delete();
 
-        if (other.TryGetComponent<HeroTrigger>(out HeroTrigger playerInter))
+        else if (other.TryGetComponent<HeroTrigger>(out HeroTrigger playerInter))
             playerInter.MoveTo(transform.position);
+        else if (other.TryGetComponent<EnemyBullet>(out EnemyBullet bulletE))
+        {
+            bulletE.Delete();
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<HeroTrigger>(out HeroTrigger playerInter))
-        {
-            if (Mathf.Abs(other.transform.position.x - transform.position.x) < 1)
-                playerInter.Damage();
-        }
+            playerInter.StopMove();
     }
 }

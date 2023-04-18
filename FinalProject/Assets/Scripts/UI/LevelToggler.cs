@@ -15,8 +15,6 @@ public class LevelToggler : MonoBehaviour
 
     private void ButtonClickHandler()
     {
-        //
-        //
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +
                                Convert.ToInt32(_button.gameObject.GetComponentInChildren<TMP_Text>().text));
     }

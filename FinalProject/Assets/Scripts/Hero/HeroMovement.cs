@@ -70,4 +70,9 @@ public class HeroMovement : MonoBehaviour
         }
         transform.position = _targetPosition;
     }
+
+    public void StopMagnet()
+    {
+        _magneted = false;
+    }
 }

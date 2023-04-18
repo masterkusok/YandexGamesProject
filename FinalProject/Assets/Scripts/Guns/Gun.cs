@@ -54,6 +54,28 @@ public class Gun : MonoBehaviour
 
     private void CreateBullet()
     {
-        GameObject bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity, null);
+        Vector3 position = transform.position;
+        position.x = nearNum(position.x);
+        GameObject bullet = Instantiate(_bulletPrefab, position, Quaternion.identity, null);
+    }
+
+    private int nearNum(float num)
+    {
+        float diff_1 = Config.RowWidth + num;
+        float diff_2 = Mathf.Abs(num);
+        float diff_3 = Config.RowWidth - num;
+
+        if (diff_1 < diff_2 && diff_1 < diff_3)
+        {
+            return -Config.RowWidth;
+        }
+        else if (diff_2 < diff_1 && diff_2 < diff_3)
+        {
+            return 0;
+        }
+        else
+        {
+            return Config.RowWidth;
+        }
     }
 }
